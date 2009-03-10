@@ -1,0 +1,60 @@
+Javascript jsdoc comment specification.
+
+Summary, Syntax, Description, Examples
+
+--
+. ClassName < SuperClass [Type] {Parent}
+--
+This tells jsdoc that the description of ClassName is being initialized that
+it inherits all the methods and properties in the prototype of SuperClass and
+that it's located in the Parent object (as in it's a property of that object,
+used for namespaces)
+
+Type can be Namespace, Normal or Abstract. A Namespace can't be constructed thus
+the .@ and .# are equal to @ and #.
+
+--
+>> ClassName/Object/Other
+--
+Add stuff to that object/class.
+
+--
+@ Name [Type]
+--
+Start the property description.
+
+--
+# Name (param1 [, param2[, ... paramn]]) => Type
+  - param1 [Type]: Description
+  ...
+--
+Add a method with param1 as required and param2 to paramn as optional.
+The returned variable is of type Type.
+And the - parameter name starts the description of the passed parameters.
+
+--
+.@
+.#
+--
+Are the same as @ and # but for static stuff.
+
+--
+|^ text
+--
+Add text to the Summary.
+
+--
+|~ text
+--
+Add text to the Syntax
+
+--
+|= text
+--
+Add text to the Description.
+
+--
+|% text
+--
+Add text to the Examples
+
